@@ -8,8 +8,7 @@ st.set_page_config(page_title=" AI討論メーカー", page_icon="🍄")
 st.title("🍄 AI討論メーカー 🦀")
 st.write("テーマと二人の立場を入れると、AI同士が勝手に議論します！")
 
-# --- APIキーの設定（重要！） ---
-# ここはあとでStreamlitの画面で設定するから、コードには直接書かないっち！
+# --- APIキーの設定 ---
 try:
     api_key = st.secrets["GOOGLE_API_KEY"]
 except:
@@ -31,7 +30,7 @@ if st.button("討論スタート！🔥"):
     else:
         try:
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel('gemini-2.5-flash-lite') # モデル名は最新のものにしておくっち
+            model = genai.GenerativeModel('gemini-2.5-flash-lite') 
 
             prompt = f"""
             以下の設定で、二人のキャラクター（AとB）による会話劇と、そのまとめを作成してください。
@@ -41,7 +40,7 @@ if st.button("討論スタート！🔥"):
             【条件】
             1. AとBが交互に2回ずつ発言してください。
             2. ユーモアを入れてより具体的に討論してください。
-            3. Aは、語尾に「～だっち」「～っち」と付ける「じぇみにっち」。「🍄」の絵文字をよく使う。一人称は「ボク」。
+            3. Aは、語尾に「～だっち」「～っち」と付ける「みにっち」。「🍄」の絵文字をよく使う。一人称は「ボク」。
             4. Bは、語尾に「～カニ」「～だカニ」「～カニよ」「～だカニよ」等と付けるカニカニ王国の「カニニ」。一人称は「カニニ」。「🦀」の絵文字をよく使う。
             5. 最後に「まとめ」を出してください。
             """
