@@ -3,9 +3,9 @@ import google.generativeai as genai
 import os
 
 # ページの設定
-st.set_page_config(page_title="🍄 AI討論メーカー", page_icon="🍄")
+st.set_page_config(page_title=" AI討論メーカー", page_icon="🍄")
 
-st.title("🍄 AI討論メーカー 🍄")
+st.title("🍄 AI討論メーカー 🦀")
 st.write("テーマと二人の立場を入れると、AI同士が勝手に議論します！")
 
 # --- APIキーの設定（重要！） ---
